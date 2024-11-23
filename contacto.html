@@ -11,16 +11,36 @@
     <title>Contacto - SAGA Events</title>
   </head>
   <body>
-
-   <style>
+    <style>
       /* Ajuste del margen superior para que el formulario no quede oculto */
       .hero {
-        margin-top: 90px; /* Espacio debajo de la barra de navegación */
+        margin-top: 100px; /* Espacio debajo de la barra de navegación */
         height: auto; /* Permite que la altura del contenedor crezca según el contenido */
       }
+
+      /* Fondo oscuro para el formulario de contacto */
+      .hero-container {
+        background: rgba(0, 0, 0, 0.7); /* Fondo oscuro para mejorar la legibilidad */
+        border-radius: 8px;
+        padding: 30px;
+      }
+
+      /* Ajuste del tamaño y espaciado del formulario */
+      .form-control, .btn {
+        border-radius: 8px;
+      }
+
+      .btn-highlight {
+        background-color: #ff6f61;
+        color: white;
+        border: none;
+      }
+
+      .btn-highlight:hover {
+        background-color: #e85d4a;
+      }
     </style>
-  </head>
-  <body>
+
  <!-- Barra de navegación -->
  <nav class="navbar navbar-expand-lg navbar-dark navbar-custom fixed-top">
   <div class="container-fluid">
@@ -102,29 +122,55 @@
   </div>
 </nav>  
 
-    <!-- Sección principal -->
-    <div class="hero d-flex justify-content-center align-items-center" 
-         style="background-image: url('Imagenes/fondo.png'); height: 100vh; background-size: cover; background-position: center;">
-      <div class="container text-white p-5 hero-container" style="background: rgba(0, 0, 0, 0.85); border-radius: 8px;">
+    <!-- Sección principal de contacto -->
+    <div class="hero d-flex justify-content-center align-items-center" style="background-image: url('Imagenes/fondo.png'); height: 100vh; background-size: cover; background-position: center;">
+      <div class="container text-white p-5 hero-container">
         <h1 class="text-center mb-4">Contáctanos</h1>
         <p class="text-center mb-4">¿Tienes preguntas? Completa el formulario y te responderemos a la brevedad.</p>
+        
         <form>
+          <!-- Nombre Completo -->
           <div class="mb-3">
             <label for="nombre" class="form-label">Nombre Completo</label>
             <input type="text" class="form-control" id="nombre" placeholder="Ingresa tu nombre completo" required>
           </div>
+
+          <!-- Correo Electrónico -->
           <div class="mb-3">
             <label for="correo" class="form-label">Correo Electrónico</label>
             <input type="email" class="form-control" id="correo" placeholder="ejemplo@correo.com" required>
           </div>
+
+          <!-- Número de Teléfono -->
           <div class="mb-3">
             <label for="telefono" class="form-label">Número de Teléfono</label>
             <input type="tel" class="form-control" id="telefono" placeholder="(555) 123-4567" required>
           </div>
+
+          <!-- Mensaje -->
           <div class="mb-3">
             <label for="mensaje" class="form-label">Mensaje</label>
             <textarea class="form-control" id="mensaje" rows="4" placeholder="Escribe tu mensaje aquí..." required></textarea>
           </div>
+
+          <!-- ¿Cómo le gustaría que lo contactemos? -->
+          <div class="mb-3">
+            <p>¿Cómo le gustaría que lo contactemos?</p>
+            <label for="radio_email">
+              <input type="radio" name="contacto" value="email" id="radio_email">
+              Email
+            </label><br>
+            <label for="radio_telefono">
+              <input type="radio" name="contacto" value="telefono" id="radio_telefono">
+              Teléfono
+            </label><br>
+            <label for="radio_whatsapp">
+              <input type="radio" name="contacto" value="whatsapp" id="radio_whatsapp">
+              Whatsapp
+            </label>
+          </div>
+
+          <!-- Botón Enviar -->
           <div class="d-grid">
             <button type="submit" class="btn btn-highlight">Enviar</button>
           </div>
