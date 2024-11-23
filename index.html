@@ -12,90 +12,115 @@
 
     <title>Sistema de Eventos - SAGA Events</title>
   </head>
+  <style>
+     .hero {
+      position: relative;
+      color: white;
+      text-align: center;
+      height: 80vh;
+      background-image: url('Imagenes/fondo.png');
+      background-size: cover;
+      background-position: center;
+    }
+
+    .hero::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.5); /* Fondo oscuro con 50% de opacidad */
+      z-index: 1;
+    }
+
+    .hero .text-center {
+      position: relative;
+      z-index: 2;
+    }
+
+  </style>
+     
   <body>
-    <!-- Barra de navegación -->
-    <nav class="navbar navbar-expand-lg navbar-dark navbar-custom fixed-top">
-      <div class="container-fluid">
-        <a class="navbar-brand" href="#">
-          <img src="Imagenes/logo.jpg" alt="Logo Prueba" width="40" height="40" class="d-inline-block align-top">
-          SAGA Events
-        </a>
+<!-- Barra de navegación -->
+ <nav class="navbar navbar-expand-lg navbar-dark navbar-custom fixed-top">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#">
+      <img src="Imagenes/logo.jpg" alt="Logo Prueba" width="40" height="40" class="d-inline-block align-top">
+      SAGA Events
+    </a>
 
-        <!-- Botón para dispositivos móviles -->
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" 
-          aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
+    <!-- Botón para dispositivos móviles -->
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" 
+      aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
 
-        <!-- Menú de navegación -->
-        <div class="collapse navbar-collapse" id="navbarNav">
-          <ul class="navbar-nav ms-auto">
-            <li class="nav-item">
-              <a class="nav-link active" href="index.html">Home</a>
+    <!-- Menú de navegación -->
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item">
+          <a class="nav-link active" href="index.html">Home</a>
 
-          <!-- Menú desplegable para Quienes somos -->  
-            <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle" href="quienessomos.html" id="loginDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                Quienes Somos?
-              </a>
-            <ul class="dropdown-menu" aria-labelledby="navbarDropdownQuienesSomos">
-              <li><a class="dropdown-item" href="quienessomos.html#mision">Misión</a></li>
-              <li><a class="dropdown-item" href="quienessomos.html#vision">Visión</a></li>
-              <li><a class="dropdown-item" href="quienessomos.html#valores">Valores</a></li>
-              <li><a class="dropdown-item" href="quienessomos.html#nuestroequipo">Nuestro Equipo</a></li>
-              <li><hr class="dropdown-divider"></li>
-              <li><a class="dropdown-item" href="quienessomos.html#historia">Historia</a></li>
-            </ul>
-            </li>
+      <!-- Menú desplegable para Quienes somos -->  
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="quienessomos.html" id="loginDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Quienes Somos?
+          </a>
+        <ul class="dropdown-menu" aria-labelledby="navbarDropdownQuienesSomos">
+          <li><a class="dropdown-item" href="quienessomos.html#mision">Misión</a></li>
+          <li><a class="dropdown-item" href="quienessomos.html#vision">Visión</a></li>
+          <li><a class="dropdown-item" href="quienessomos.html#valores">Valores</a></li>
+          <li><a class="dropdown-item" href="quienessomos.html#nuestroequipo">Nuestro Equipo</a></li>
+          <li><hr class="dropdown-divider"></li>
+          <li><a class="dropdown-item" href="quienessomos.html#historia">Historia</a></li>
+        </ul>
+        </li>
 
 
-            <!-- Menú desplegable para Mobiliario -->
-            <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle" href="mobiliario.html" id="loginDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                Mobiliario
-              </a>
-              <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                <li><a class="dropdown-item" href="galeria.html#mesas">Mesas</a></li>
-                <li><a class="dropdown-item" href="galeria.html#sillas">Sillas</a></li>
-                <li><a class="dropdown-item" href="galeria.html#inflables">Inflables</a></li>
-                <li><a class="dropdown-item" href="galeria.html#carpas">Carpas</a></li>
-                <li><a class="dropdown-item" href="galeria.html#tarimas">Tarimas</a></li>
-                <li><a class="dropdown-item" href="galeria.html#periqueras">Periqueras</a></li>
-                <li><hr class="dropdown-divider"></li>
-              </ul>
-            </li>
-
-            <li class="nav-item">
-              <a class="nav-link" href="servicios.html">Servicios</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="galeria.html">Galería</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="cotiza.html">Cotiza tu Evento</a>
-            </li>
-            <li class="nav-item">
-              <a class="btn btn-highlight" href="contacto.html">Contacto</a>
-            </li>
-            
-            <!-- Botón de Iniciar Sesión -->
-            <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle" href="iniciar-sesion.html" id="loginDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                Iniciar Sesión
-              </a>
-              <div class="dropdown-menu" aria-labelledby="loginDropdown">
-                <a class="dropdown-item" href="#">Configuración de Cuenta</a>
-                <a class="dropdown-item" href="#">Puntos</a>
-                <a class="dropdown-item" href="#">Registros de Rentas</a>
-                <div class="dropdown-divider"></div>
-                <a class="dropdown-item" href="registrocliente.html">Registro Clientes</a>
-                <a class="dropdown-item" href="#">Cerrar Sesión</a>
-              </div>
-            </li>
+        <!-- Menú desplegable para Mobiliario -->
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="mobiliario.html" id="loginDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Mobiliario
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <li><a class="dropdown-item" href="mobiliario.html#mesas">Mesas</a></li>
+            <li><a class="dropdown-item" href="mobiliario.html#sillas">Sillas</a></li>
+            <li><a class="dropdown-item" href="mobiliario.html#inflables">Inflables</a></li>
+            <li><a class="dropdown-item" href="mobiliario.html#carpas">Carpas</a></li>
+            <li><a class="dropdown-item" href="mobiliario.html#tarimas">Tarimas</a></li>
+            <li><a class="dropdown-item" href="mobiliario.html#periqueras">Periqueras</a></li>
+            <li><hr class="dropdown-divider"></li>
           </ul>
-        </div>
-      </div>
-    </nav>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link" href="servicios.html">Servicios</a>
+        </li>
+          <a class="nav-link" href="cotiza.html">Cotiza tu Evento</a>
+        </li>
+        <li class="nav-item">
+          <a class="btn btn-highlight" href="contacto.html">Contacto</a>
+        </li>
+        
+        <!-- Botón de Iniciar Sesión -->
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="iniciar-sesion.html" id="loginDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Iniciar Sesión
+          </a>
+          <div class="dropdown-menu" aria-labelledby="loginDropdown">
+            <a class="dropdown-item" href="#">Configuración de Cuenta</a>
+            <a class="dropdown-item" href="#">Puntos</a>
+            <a class="dropdown-item" href="#">Registros de Rentas</a>
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item" href="registrocliente.html">Registro Clientes</a>
+            <a class="dropdown-item" href="#">Cerrar Sesión</a>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>  
 
     <!-- Sección principal con imagen de fondo -->
     <div class="hero d-flex justify-content-center align-items-center" 

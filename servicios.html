@@ -13,95 +13,203 @@
     <title>Servicios</title>
   </head>
   <body>
-    <!-- Barra de navegación -->
-    <nav class="navbar navbar-expand-lg navbar-dark navbar-custom fixed-top">
-      <div class="container-fluid">
-        <a class="navbar-brand" href="#">
-          <img src="Imagenes/logo.jpg" alt="Logo Prueba" width="40" height="40" class="d-inline-block align-top">
-          SAGA Events
-        </a>
+    <style>
+      .hero {
+        position: relative;
+        color: white;
+        text-align: center;
+        height: 80vh;
+        background-image: url('Imagenes/fondo.png');
+        background-size: cover;
+        background-position: center;
+      }
+      .hero::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.5); /* Fondo oscuro con 50% de opacidad */
+        z-index: 1;
+      }
+      .hero .text-center {
+        position: relative;
+        z-index: 2;
+      }
+      .services-section {
+        padding: 4rem 2rem;
+        background-color: #f8f9fa;
+      }
+      .service-card img {
+        width: 100%;
+        height: 250px; /* Altura fija para las imágenes */
+        object-fit: cover; /* Recorta las imágenes para llenar el área especificada */
+        border-radius: 5px;
+      }
+      .service-card:hover {
+        transform: scale(1.05);
+        transition: transform 0.3s ease;
+      }
+    </style>
 
-        <!-- Botón para dispositivos móviles -->
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" 
-          aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
+  <!-- Barra de navegación -->
+ <nav class="navbar navbar-expand-lg navbar-dark navbar-custom fixed-top">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#">
+      <img src="Imagenes/logo.jpg" alt="Logo Prueba" width="40" height="40" class="d-inline-block align-top">
+      SAGA Events
+    </a>
 
-        <!-- Menú de navegación -->
-        <div class="collapse navbar-collapse" id="navbarNav">
-          <ul class="navbar-nav ms-auto">
-            <li class="nav-item">
-              <a class="nav-link active" href="index.html">Home</a>
+    <!-- Botón para dispositivos móviles -->
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" 
+      aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
 
-          <!-- Menú desplegable para Quienes somos -->  
-            <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle" href="quienessomos.html" id="loginDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                Quienes Somos?
-              </a>
-            <ul class="dropdown-menu" aria-labelledby="navbarDropdownQuienesSomos">
-              <li><a class="dropdown-item" href="quienessomos.html#mision">Misión</a></li>
-              <li><a class="dropdown-item" href="quienessomos.html#vision">Visión</a></li>
-              <li><a class="dropdown-item" href="quienessomos.html#valores">Valores</a></li>
-              <li><a class="dropdown-item" href="quienessomos.html#nuestroequipo">Nuestro Equipo</a></li>
-              <li><hr class="dropdown-divider"></li>
-              <li><a class="dropdown-item" href="quienessomos.html#historia">Historia</a></li>
-            </ul>
-            </li>
+    <!-- Menú de navegación -->
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item">
+          <a class="nav-link active" href="index.html">Home</a>
+
+      <!-- Menú desplegable para Quienes somos -->  
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="quienessomos.html" id="loginDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Quienes Somos?
+          </a>
+        <ul class="dropdown-menu" aria-labelledby="navbarDropdownQuienesSomos">
+          <li><a class="dropdown-item" href="quienessomos.html#mision">Misión</a></li>
+          <li><a class="dropdown-item" href="quienessomos.html#vision">Visión</a></li>
+          <li><a class="dropdown-item" href="quienessomos.html#valores">Valores</a></li>
+          <li><a class="dropdown-item" href="quienessomos.html#nuestroequipo">Nuestro Equipo</a></li>
+          <li><hr class="dropdown-divider"></li>
+          <li><a class="dropdown-item" href="quienessomos.html#historia">Historia</a></li>
+        </ul>
+        </li>
 
 
-            <!-- Menú desplegable para Mobiliario -->
-            <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle" href="mobiliario.html" id="loginDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                Mobiliario
-              </a>
-              <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                <li><a class="dropdown-item" href="galeria.html#mesas">Mesas</a></li>
-                <li><a class="dropdown-item" href="galeria.html#sillas">Sillas</a></li>
-                <li><a class="dropdown-item" href="galeria.html#inflables">Inflables</a></li>
-                <li><a class="dropdown-item" href="galeria.html#carpas">Carpas</a></li>
-                <li><a class="dropdown-item" href="galeria.html#tarimas">Tarimas</a></li>
-                <li><a class="dropdown-item" href="galeria.html#periqueras">Periqueras</a></li>
-                <li><hr class="dropdown-divider"></li>
-              </ul>
-            </li>
-
-            <li class="nav-item">
-              <a class="nav-link" href="servicios.html">Servicios</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="galeria.html">Galería</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="cotiza.html">Cotiza tu Evento</a>
-            </li>
-            <li class="nav-item">
-              <a class="btn btn-highlight" href="contacto.html">Contacto</a>
-            </li>
-            
-            <!-- Botón de Iniciar Sesión -->
-            <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle" href="iniciar-sesion.html" id="loginDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                Iniciar Sesión
-              </a>
-              <div class="dropdown-menu" aria-labelledby="loginDropdown">
-                <a class="dropdown-item" href="#">Configuración de Cuenta</a>
-                <a class="dropdown-item" href="#">Puntos</a>
-                <a class="dropdown-item" href="#">Registros de Rentas</a>
-                <div class="dropdown-divider"></div>
-                <a class="dropdown-item" href="registrocliente.html">Registro Clientes</a>
-                <a class="dropdown-item" href="#">Cerrar Sesión</a>
-              </div>
-            </li>
-
+        <!-- Menú desplegable para Mobiliario -->
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="mobiliario.html" id="loginDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Mobiliario
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <li><a class="dropdown-item" href="mobiliario.html#mesas">Mesas</a></li>
+            <li><a class="dropdown-item" href="mobiliario.html#sillas">Sillas</a></li>
+            <li><a class="dropdown-item" href="mobiliario.html#inflables">Inflables</a></li>
+            <li><a class="dropdown-item" href="mobiliario.html#carpas">Carpas</a></li>
+            <li><a class="dropdown-item" href="mobiliario.html#tarimas">Tarimas</a></li>
+            <li><a class="dropdown-item" href="mobiliario.html#periqueras">Periqueras</a></li>
+            <li><hr class="dropdown-divider"></li>
           </ul>
-        </div>
-      </div>
-    </nav>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link" href="servicios.html">Servicios</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="cotiza.html">Cotiza tu Evento</a>
+        </li>
+        <li class="nav-item">
+          <a class="btn btn-highlight" href="contacto.html">Contacto</a>
+        </li>
+        
+        <!-- Botón de Iniciar Sesión -->
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="iniciar-sesion.html" id="loginDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Iniciar Sesión
+          </a>
+          <div class="dropdown-menu" aria-labelledby="loginDropdown">
+            <a class="dropdown-item" href="#">Configuración de Cuenta</a>
+            <a class="dropdown-item" href="#">Puntos</a>
+            <a class="dropdown-item" href="#">Registros de Rentas</a>
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item" href="registrocliente.html">Registro Clientes</a>
+            <a class="dropdown-item" href="#">Cerrar Sesión</a>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>  
 
     <!-- Sección principal con imagen de fondo -->
     <div class="hero d-flex justify-content-center align-items-center" 
          style="background-image: url('Imagenes/fondo.png'); height: 100vh; background-size: cover; background-position: center;">
+      <div class="text-center text-white">
+        <h1 class="display-4">Nuestros Servicios</h1>
+        <p class="lead">Hacemos que tus eventos sean inolvidables</p>
+      </div>
     </div>
+
+    <!-- Sección de Servicios -->
+    <section class="services-section">
+      <div class="container">
+        <div class="text-center mb-5">
+          <h2 class="fw-bold">¿Qué Ofrecemos?</h2>
+          <p class="text-muted">Explora nuestros servicios diseñados para hacer de tu evento una experiencia única.</p>
+        </div>
+        <div class="row g-4">
+          <div class="col-md-4">
+            <div class="card service-card border-0 shadow-sm">
+              <img src="Imagenes/mobiliario servicio.jpeg" class="card-img-top" alt="Mobiliario">
+              <div class="card-body">
+                <h5 class="card-title">Renta de Mobiliario</h5>
+                <p class="card-text">Mesas, sillas, carpas y más para tu evento. Adaptamos todo a tus necesidades.</p>
+                <a href="mobiliario.html" class="btn btn-primary">Ver más</a>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="card service-card border-0 shadow-sm">
+              <img src="Imagenes/decoracion servicio.jpg" class="card-img-top" alt="Decoración">
+              <div class="card-body">
+                <h5 class="card-title">Decoración Temática</h5>
+                <p class="card-text">Creamos ambientes personalizados que impresionan a tus invitados.</p>
+                <p class="card-text">PROXIMAMENTE</p>
+                <a href="#" class="btn btn-primary">Descubre más</a>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="card service-card border-0 shadow-sm">
+              <img src="Imagenes/caterin servicio.jpg" class="card-img-top" alt="Catering">
+              <div class="card-body">
+                <h5 class="card-title">Catering</h5>
+                <p class="card-text">Opciones gastronómicas adaptadas a tu presupuesto y gustos.</p>
+                <p class="card-text">PROXIMAMENTE</p>
+                <a href="#" class="btn btn-primary">Saber más</a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row g-4 mt-4">
+          <div class="col-md-6">
+            <div class="card service-card border-0 shadow-sm">
+              <img src="Imagenes/iluminacion servicios.PNG" class="card-img-top" alt="Iluminación">
+              <div class="card-body">
+                <h5 class="card-title">Iluminación y Sonido</h5>
+                <p class="card-text">Sistemas profesionales de luz y sonido para eventos de cualquier tamaño.</p>
+                <p class="card-text">PROXIMAMENTE</p>
+                <a href="#" class="btn btn-primary">Conoce más</a>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="card service-card border-0 shadow-sm">
+              <img src="Imagenes/ayuda servicios.png" class="card-img-top" alt="Planificación">
+              <div class="card-body">
+                <h5 class="card-title">Planificación de Eventos</h5>
+                <p class="card-text">Te ayudamos en cada paso para garantizar el éxito de tu evento.</p>
+                <p class="card-text">PROXIMAMENTE</p>
+                <a href="#" class="btn btn-primary">Leer más</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
 
     <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
